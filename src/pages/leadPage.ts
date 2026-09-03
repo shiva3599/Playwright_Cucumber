@@ -50,9 +50,6 @@ async getCompany(): Promise<string|null>
   }  
 
 
-
-
-    
 }
 
 

@@ -11,6 +11,8 @@ export class HomePage {
   loc_lnk_logout = "//a[text()='Logout']";
   loc_lnk_New_Lead = "//a[text()='New Lead']";
   loc_lnk_leads = "//a[text()='Leads']";
+  loc_lnk_New_Accounts="//a[contains(text(),'New Account')]";
+  loc_lnk_New_Contacts="//a[contains(text(),'New Contact')]"
     
  
 
@@ -32,13 +34,18 @@ async clickNewLead(): Promise<void>
 async clickLeads(): Promise<void>
   {
     await this.page.click(this.loc_lnk_leads);   
-  }    
+  } 
+  
+  async clickNewAccount(){
+    await this.page.click(this.loc_lnk_New_Accounts)
+  }
 
+   async clickNewContacts(){
+    await this.page.click(this.loc_lnk_New_Contacts)
+  }
 
-
-
-
-    
 }
+
+
 
 

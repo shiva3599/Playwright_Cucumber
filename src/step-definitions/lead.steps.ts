@@ -11,6 +11,7 @@ Given('the user click on new lead link', async function () {
 Then('fill the mandatory fields and click on save button', async function () {
    
   await this.leadpage.createlead(this.data.lastname,this.data.company);
+  
 
 });
 

@@ -3,19 +3,42 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
-  "scripts": {},
+  "scripts": {
+    "test": "cucumber-js",
+    "leads": "cucumber-js --tags=@lead",
+    "Account": "cucumber-js --tags=@account",
+    "invalid":"cucumber-js --tags=@invalid",
+    "contact":"cucumber-js --tags=@contact",
+    "report": "ts-node report.ts",
+    "parallel": "cucumber-js --parallel 4",
+    "test:report": "npm run test && npm run report",
+    "allure:generate": "allure generate allure-results --clean ",
+    "allure:open": "allure open allure-report",
+    "allure": "cucumber-js && allure generate allure-results --clean && allure open allure-report",
+    "chrome": "cross-env BROWSER=chrome cucumber-js",
+    "firefox": "cross-env BROWSER=firefox cucumber-js",
+    "edge": "cross-env BROWSER=edge cucumber-js",
+    "parallel:browsers": "concurrently \"npm run chrome\" \"npm run firefox\" \"npm run edge\""
+  },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "type": "commonjs",
   "devDependencies": {
-    "@cucumber/cucumber": "^13.0.0",
-    "@playwright/test": "^1.61.0",
-    "@types/node": "^26.0.0",
+    "@cucumber/cucumber": "^12.9.0",
+    "@playwright/test": "^1.61.1",
+    "@types/node": "^26.0.1",
+    "allure-commandline": "^2.43.0",
+    "allure-cucumberjs": "^3.10.2",
+    "allure-playwright": "^3.10.2",
+    "concurrently": "^10.0.3",
+    "cross-env": "^10.1.0",
+    "multiple-cucumber-html-reporter": "^4.0.0",
     "ts-node": "^10.9.2",
     "typescript": "^6.0.3"
   },
   "dependencies": {
+    "csv-parser": "^3.2.1",
     "xlsx": "^0.18.5"
   }
 }
