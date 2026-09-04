@@ -45,7 +45,10 @@ async clickSave(): Promise<void>
     await this.page.click(this.loc_save)
   }
 
-  
+  async getFirstName()
+  {
+    return await this.page.textContent(this.loc_First_name);
+  }  
 
 
 
