@@ -14,7 +14,7 @@ export class AccountPage {
 
     
   
-async  createaccount(accountname:string, employees:number): Promise<void>
+async  createaccount(accountname:string, employees:string): Promise<void>
   {    
     await this.setAccountName(accountname);
     await this.setEmployees(employees);
@@ -27,9 +27,9 @@ async setAccountName(accountname: string): Promise<void>
     await this.page.fill(this.loc_tb_accountname, accountname);
   }
 
-async setEmployees(employees:number)
+async setEmployees(employees:string)
   {
-    await this.page.fill(this.loc_tb_employees, employees.toString());
+    await this.page.fill(this.loc_tb_employees, employees);
   }
 
 async clickSave(): Promise<void>
